@@ -4,8 +4,7 @@ var clicks = 0;
 $(document).ready(function(){
 
   $('#generateButton').on('click', Main);
-  $('#mainBody').on('click', 'swapButton' , doToggle(event));
-
+  $('#mainBody').on('click', '#swapButton' , doToggle(event));
 });
 
 function Main() {
@@ -14,13 +13,15 @@ function Main() {
   clicks++;
   $('#divId').append("<p id=p1></p>");
   $('#p1').text(clicks);
-
+//<button type="button" id="generateButton">Generate</button>
   $('#divId').append("<button type=\"button\" id=\"swapButton\">Swap</button>");
   $('#divId').append("<button type=\"button\" id=\"deleteButton\">Delete</button>");
 } // END: Main
 
 function doToggle(event) {
-    $(event).css("background-color", "yellow");
+  console.log('doToggle');
+    $(this).css("background-color", "yellow");
+    $(this).css("background-color", "red");
 
     //$(this).toggleClass('');
 } // END: doToggle
